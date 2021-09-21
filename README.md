@@ -4,7 +4,7 @@
 
 "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. It is created with HTML , CSS , JS and webpack and NPM. 
 
-![screenshot](./app_screenshot.png)
+![screenshot](./app_screenshots.png)
 
 look thorugh the website to see the work and contact me if needed.
 
