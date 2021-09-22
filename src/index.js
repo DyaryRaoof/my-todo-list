@@ -1,4 +1,5 @@
 import './style.css';
+import update from './update.js';
 
 const button = document.querySelector('button');
 class Todo {
@@ -9,7 +10,7 @@ class Todo {
   }
 }
 
-const todos = [
+let todos = [
   new Todo('Hello world 1', false, 0),
   new Todo('Hello world 2', false, 1),
   new Todo('Hello world 5', false, 4),
@@ -24,7 +25,8 @@ function populate() {
     li.innerHTML = `
     <div class="flex">
       <div>
-          <input type="checkbox">
+          <input type="checkbox" class="checkbox" 
+          ${todo.completed ? 'checked' : ''}>
           <span>${todo.description}</span>
       </div>
       <span class="material-icons">
@@ -37,6 +39,25 @@ function populate() {
   });
 }
 
+function saveTodosLocally() {
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function addEventsToCheckboxes() {
+  const checkboxes = document.querySelectorAll('.checkbox');
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener('change', () => {
+      update(todos[index]);
+      saveTodosLocally();
+    });
+  });
+}
+
 window.addEventListener('load', () => {
+  const oldTodos = JSON.parse(localStorage.getItem('todos'));
+  if (oldTodos) {
+    todos = oldTodos;
+  }
   populate();
+  addEventsToCheckboxes();
 });
