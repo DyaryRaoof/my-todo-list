@@ -177,7 +177,7 @@ function addEventListenerToInput() {
   const input = document.querySelector('#input');
   input.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
-      const todo = new Todo(input.value, false, todos.length);
+      const todo = new Todo(input.value, false, todos.length + 1);
       addTodo(todo, todos);
       addTodoElement(todo);
       saveTodosLocally();
