@@ -36,7 +36,7 @@ use npm start to see the project in your browser.
 run npm start.
 
 ### Live Demo
-[Live Demo Link]( https://dyaryraoof.github.io/my-todo-list/)
+[Live Demo Link]( https://dyaryraoof.github.io/my-todo-list/dist)
 
 ## Authors
 

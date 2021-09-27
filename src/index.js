@@ -1,6 +1,6 @@
 import './style.css';
 import update from './update.js';
-import { addTodo, deleteTodo, updateTodo } from './crud';
+import { addTodo, deleteTodo, updateTodo } from './crud.js';
 
 const button = document.querySelector('button');
 class Todo {
